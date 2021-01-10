@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentCommandLineParser.NETStandard" Version="1.5.0.31-commands" />
+  </ItemGroup>
+
+ <ItemGroup>
+    <ProjectReference Include="..\Dev\Dev.csproj" />
+  </ItemGroup>
+
+</Project>
