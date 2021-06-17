@@ -10,9 +10,9 @@
 			"request": "launch",
 			"preLaunchTask": "build",
 			// If you have changed target frameworks, make sure to update the program path.
-			"program": "${workspaceFolder}/src/App/bin/Debug/netcoreapp3.1/FHIRValidate.dll",
+			"program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/FHIRValidate.dll",
 			"args": [],
-			"cwd": "${workspaceFolder}/src/App",
+			"cwd": "${workspaceFolder}",
 			// For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
 			"console": "internalConsole",
 			"stopAtEntry": false

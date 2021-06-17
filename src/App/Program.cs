@@ -1,4 +1,4 @@
-﻿using Fclp;
+﻿// using Fclp;
 using System;
 
 namespace FHIRValidate.App {
@@ -6,7 +6,7 @@ namespace FHIRValidate.App {
         public static CommandArgs Params { get; set; }
 
         static void Main(string[ ] args) {
-            // Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!");
             // var p = new FluentCommandLineParser<CommandArgs>();
 
             // p.Setup(arg => arg.Directory)
@@ -16,7 +16,8 @@ namespace FHIRValidate.App {
             // Params = p.Object;
             // Params.Directory = "/Users/mthomas/Development/FHIRValidate/TestData";
 
-            FHIRValidate.Dev.Validate v = new Dev.Validate("/Users/mthomas/Development/FHIRValidate/TestData");
+             
+            FHIRValidate.Dev.Validate v = new Dev.Validate(@"C:\Development\Leder\FHIRValidator\testData");
 
             v.Execute();
         }
