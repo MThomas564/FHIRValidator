@@ -58,16 +58,6 @@ namespace FHIRValidate.Dev {
                 throw new Exception("Several resources failed basic validation");
             }
 
-            // Console.WriteLine("Starting in depth validation");
-            // foreach(var r in _success){
-            //     try{
-            //         var ctx = new ValidationContext(new Hl7.Fhir.Model.Questionnaire());
-            //         var validator = new Validator();
-            //         r.Item2.Validate(ctx);
-            //     } catch(Exception e){
-            //         throw e;
-            //     }
-            // }
         }
 
         protected string[ ] LoadFiles(string strDir) {
@@ -104,6 +94,10 @@ namespace FHIRValidate.Dev {
                         Console.WriteLine("CodeSystem");
                         var c = parser.Parse<Hl7.Fhir.Model.CodeSystem>(s);
                         _success.Add((fileName, c));
+                        break;
+                    case "StructureDefinition":
+                        var sD = parser.Parse<Hl7.Fhir.Model.StructureDefinition>(s);
+                        _success.Add((fileName, sD));
                         break;
                     default:
                         Console.WriteLine("No Type");
