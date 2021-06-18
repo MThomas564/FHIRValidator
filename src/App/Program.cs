@@ -6,17 +6,21 @@ namespace FHIRValidate.App {
         public static CommandArgs Params { get; set; }
 
         static void Main(string[ ] args) {
-            Console.WriteLine("Hello World!");
             var p = new FluentCommandLineParser<CommandArgs>();
 
             p.Setup(arg => arg.Directory)
                 .As('d', "Directory")
                 .Required();
 
-            Params = p.Object;
-            // Params.Directory = "/Users/mthomas/Development/FHIRValidate/TestData";
+            var arg = p.Parse(args);
+            if (arg.HasErrors == true) {
+                string err = "Error in arguments";
+                Console.WriteLine(err);
+                throw new Exception(err);
+            }
 
-             
+            Params = p.Object;
+
             FHIRValidate.Dev.Validate v = new Dev.Validate(Params.Directory);
 
             v.Execute();

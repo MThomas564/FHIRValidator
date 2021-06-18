@@ -22,7 +22,7 @@ namespace FHIRValidate.Dev {
         private List<(string, Hl7.Fhir.Model.Base)> _success;
 
         public Validate(string Directory) {
-            Ensure.That(Directory).IsNotNull();
+            Ensure.That(Directory).IsNotNullOrEmpty();
             _directory = Directory;
         }
 
