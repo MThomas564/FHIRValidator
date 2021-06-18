@@ -38,6 +38,6 @@ steps:
     command: 'publish'
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
     feedsToUsePublish: 'internal'
-    vstsFeedPublish: '0e1ab246-25a6-4ae4-a164-59467ce1f40f'
+    vstsFeedPublish: '3433c1a6-87a8-4820-9ba9-c86ffc14c899/9144e364-47a4-4207-90d7-3515829d53d5'
     vstsFeedPackagePublish: 'fhir-validator'
     versionOption: 'patch'
