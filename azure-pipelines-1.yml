@@ -32,3 +32,12 @@ steps:
     publishWebProjects: false
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --self-contained true -r win-x64'
     zipAfterPublish: false
+
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '0e1ab246-25a6-4ae4-a164-59467ce1f40f'
+    vstsFeedPackagePublish: 'fhir-validator'
+    versionOption: 'patch'
