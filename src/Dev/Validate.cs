@@ -54,15 +54,20 @@ namespace FHIRValidate.Dev {
                 Console.WriteLine("========================");
             }
 
-            Console.WriteLine("Starting in depth validation");
-            foreach(var r in _success){
-                try{
-                    var ctx = new ValidationContext(new Hl7.Fhir.Model.Questionnaire());
-                    r.Item2.Validate(ctx);
-                } catch(Exception e){
-                    throw e;
-                }
+            if(_failures.Count > 0){
+                throw new Exception("Several resources failed basic validation");
             }
+
+            // Console.WriteLine("Starting in depth validation");
+            // foreach(var r in _success){
+            //     try{
+            //         var ctx = new ValidationContext(new Hl7.Fhir.Model.Questionnaire());
+            //         var validator = new Validator();
+            //         r.Item2.Validate(ctx);
+            //     } catch(Exception e){
+            //         throw e;
+            //     }
+            // }
         }
 
         protected string[ ] LoadFiles(string strDir) {
