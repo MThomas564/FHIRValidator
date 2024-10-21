@@ -51,8 +51,10 @@ jobs:
       # Step 8: Upload the release asset to GitHub
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Ensure GITHUB_TOKEN is set here as well
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}  # Use the upload URL from the create-release step
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./publish/release.zip
           asset_name: release.zip
           asset_content_type: application/zip
